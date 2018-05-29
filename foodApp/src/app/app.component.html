@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+ <title>CodeFactory</title>
+
+ <meta charset="utf-8">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+ <div class="container">
+
+   <h2>Fruits and Vegetables</h2>
+
+   
+<div *ngIf="appState == 'extend'">
+
+  <div class="row">
+
+    <div class="col-lg-6">
+
+      <button class="btn btn-info" (click)="changeState('default')">close</button>
+
+    </div>
+
+    <div class="col-lg-6">
+
+      <div *ngFor="let foodapp of foodapps">
+
+        <div *ngIf="foodapp.$key == activeKey">
+
+          {{foodapp.category}}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+   <table class="table table-striped">
+
+     <thead>
+
+       <tr>
+
+         <th>Name</th>
+
+         <th>Category</th>
+
+         <th>Vitamin</th>
+
+       </tr>
+
+     </thead>
+
+     <tbody>
+
+       <tr *ngFor="let foodapp of foodapps">
+
+         <td>{{foodapp.name}}</td>
+
+         <td>{{foodapp.category}}</td>
+
+         <td>{{foodapp.vitamin}}</td>
+
+         <button (click)="changeState('extend', foodapp.$key)" class="btn btn-info">More</button>
+
+       </tr>
+
+     </tbody>
+
+   </table>
+
+ </div>
+
+</body>
+
+</html>
