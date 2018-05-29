@@ -44,12 +44,14 @@ filterCategory(category) {
   this._firebaseService.getFoodApps(category).subscribe(foodapp=> {
     this.foodapps = foodapp;
   });
+  /* unnecessary
   var filtered=[],e=this.foodapps;
   //alert(category);
   e.map(function(x){if(x.category==category){filtered.push(x)}});
   //alert(JSON.stringify(filtered));
   this.foodapps=JSON.parse(JSON.stringify(e));
   ++this.triggered;
+  */
 }
   
 changeState(state, key = null) {
@@ -63,6 +65,16 @@ changeState(state, key = null) {
   this.appState = state;
 
 
+  }
+
+  addFood(name: string, category: string, vitamin: string) {
+   var newFood = {
+     name: name,
+     category: category,
+     vitamin: vitamin
+   }
+   this._firebaseService.addFood(newFood);
+   this.changeState('default');
   }
 }
 

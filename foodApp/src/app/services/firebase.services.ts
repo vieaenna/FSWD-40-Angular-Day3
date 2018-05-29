@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class FirebaseService{
   foodapp: FirebaseListObservable<Foodapp[]>;
+  //businesses: FirebaseListObservable<Businesses[]>;
   categories: FirebaseListObservable<Category[]>;
   constructor(private af: AngularFireDatabase) {
     
@@ -17,6 +18,12 @@ export class FirebaseService{
       this.categories= this.af.list('/categories') as FirebaseListObservable<Category[]>;
       return this.categories ;
   }
+
+  addFood(newFood) {
+      return this.foodapp.push(newFood);
+  }
+
+
 
   getFoodApps(category: string = null) {
       if (category != null) {
