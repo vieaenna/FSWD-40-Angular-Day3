@@ -20,8 +20,9 @@ export class AppComponent implements OnInit {
   categories: Category[];
   appState: string;
   activeKey: string;
+  triggered: number;
   constructor(private _firebaseService: FirebaseService) {
-
+   this.triggered=0;
   };
 
   ngOnInit() {
@@ -40,9 +41,15 @@ export class AppComponent implements OnInit {
  
   }
 filterCategory(category) {
-  this._firebaseService.getFoodApps(category).subscribe(category=> {
-    this.foodapps = category;
-  })
+  this._firebaseService.getFoodApps(category).subscribe(foodapp=> {
+    this.foodapps = foodapp;
+  });
+  var filtered=[],e=this.foodapps;
+  //alert(category);
+  e.map(function(x){if(x.category==category){filtered.push(x)}});
+  //alert(JSON.stringify(filtered));
+  this.foodapps=JSON.parse(JSON.stringify(e));
+  ++this.triggered;
 }
   
 changeState(state, key = null) {

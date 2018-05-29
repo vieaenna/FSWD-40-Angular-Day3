@@ -1,0 +1,8 @@
+Day 3 | Classwork
+Classwork Day 3
+Today we will improve our food App through implementing two powerful features, filter by and add new food. 
+
+Create a filter by feature which will filter the foods based on their category i.e. once the user selects fruits from the dropdown list, only the fruits should be listed
+Create a form in the existing App, which will offer the user the possibility to store new data. Once the user fills in the form and submits it, the new data should be stored in the Firebase Database
+If the user clicks on the delete button, the food item should be deleted from the Firebase Database.
+Please note: The whole workflow for building these functionalities are covered in the Day 3 pre-work material of the Angular course. 
