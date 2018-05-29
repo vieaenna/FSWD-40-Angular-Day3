@@ -1,0 +1,40 @@
+{
+  "categories" : [ {
+    "category" : "fruit"
+  }, {
+    "category" : "vegetable"
+  } ],
+  "foodapp" : [ {
+    "category" : "fruit",
+    "name" : "Apple",
+    "vitamin" : "C"
+  }, {
+    "category" : "fruit",
+    "name" : "Banana",
+    "vitamin" : "B6"
+  }, {
+    "category" : "vegetable",
+    "name" : "Cucumber",
+    "vitamin" : "B"
+  }, {
+    "category" : "vegetable",
+    "name" : "Salad",
+    "vitamin" : "E"
+  }, {
+    "category" : "fruit",
+    "name" : "Pineapple",
+    "vitamin" : "C"
+  }, {
+    "category" : "vegetable",
+    "name" : "Potato",
+    "vitamin" : "B6"
+  }, {
+    "category" : "fruit",
+    "name" : "Strawberry",
+    "vitamin" : "C"
+  }, {
+    "category" : "vegetable",
+    "name" : "Asparagus",
+    "vitamin" : "A"
+  } ]
+}
