@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   };
 
   ngOnInit() {
-
+    this.appState='default';
     this._firebaseService.getFoodapp().subscribe(foodapp => {
  
       this.foodapps = foodapp;
@@ -38,7 +38,13 @@ export class AppComponent implements OnInit {
  
     });
  
-  }  
+  }
+filterCategory(category) {
+  this._firebaseService.getFoodApps(category).subscribe(category=> {
+    this.foodapps = category;
+  })
+}
+  
 changeState(state, key = null) {
 
   if(key) {
